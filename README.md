@@ -26,13 +26,13 @@ the password is not your real password you need to generate a token api on your 
 ticket = jira_ticket(username: YOUR_EMAIL, password: YOUR_JIRA_TOKEN, url: 'https://your-jira-url.com', ticket_id: 'XXXX')
 ```
 
-## how to user
+## how to use
 ```
     ticket = jira_ticket(url: "https://YOUR_JIRA_ADDRESS",username: ENV["JIRA_USERNAME"],password: ENV["JIRA_TOKEN"],ticket_id: "TICKET_1001")
     
-    image = ticket.assignee.avatarUrls['48x48'] // is avatar of user in charge of the ticket
-    username = ticket.assignee.displayName // is name of user in charge of the ticket
-    summary = ticket.summary // title of  the ticket
+    image = ticket.assignee.avatarUrls['48x48'] // it is avatar of user in charge of the ticket
+    username = ticket.assignee.displayName // it is name of user in charge of the ticket
+    summary = ticket.summary // title of the ticket
     text = ticket.description.truncate(200) // content of the ticket
     id = ticket.key // id of the ticket
     ....
