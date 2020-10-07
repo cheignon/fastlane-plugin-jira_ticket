@@ -30,11 +30,24 @@ ticket = jira_ticket(username: YOUR_EMAIL, password: YOUR_JIRA_TOKEN, url: 'http
 ```
     ticket = jira_ticket(url: "https://YOUR_JIRA_ADDRESS",username: ENV["JIRA_USERNAME"],password: ENV["JIRA_TOKEN"],ticket_id: "TICKET_1001")
     
-    image = ticket.assignee.avatarUrls['48x48'] // it is avatar of user in charge of the ticket
-    username = ticket.assignee.displayName // it is name of user in charge of the ticket
     summary = ticket.summary // title of the ticket
-    text = ticket.description.truncate(200) // content of the ticket
+    description = ticket.description // content of the ticket
     id = ticket.key // id of the ticket
+    created = ticket.created // creation date
+    updated = ticket.updated // last update date
+    
+    assigneeEmail = ticket.assignee.emailAddress // it is email of user in charge of the ticket
+    assigneeImage = ticket.assignee.avatarUrls['48x48'] // it is avatar of user in charge of the ticket
+    assigneeName =  ticket.assignee.displayName // it is name of user in charge of the ticket
+    
+
+    reporterEmail = ticket.reporter.emailAddress
+    reporterImage = ticket.reporter.avatarUrls['48x48']
+    reporterName =  ticket.reporter.displayName
+    
+    creatorEmail = ticket.creator.emailAddress // it is email of user who create the ticket
+    creatorImage = ticket.creator.avatarUrls['48x48'] // it is avatar of user  who create the ticket
+    creatorName =  ticket.creator.displayName // it is name of user who create the ticket
     ....
 
 ```
